@@ -1,17 +1,18 @@
-import logo from './logo.svg';
+
 import './App.css';
-import {useState} from 'react'
-import Render from './Components/Render';
+
+
 import Countries from './Components/Countries';
 import Conversion from './Components/Conversion';
+import { Route,Routes } from 'react-router-dom';
 
-
-let api='https://v6.exchangerate-api.com/v6/`{key}`/pair/EUR/GBP/AMOUNT'
 function App() {
  
-  return (<>
-    <Conversion />
-  </>)
+  return (<Routes>
+  <Route path='/' exact element={ <Conversion />} />
+  <Route path='codes' exact element={<Countries />} />
+   
+  </Routes>)
  
 }
 

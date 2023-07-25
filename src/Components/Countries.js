@@ -15,7 +15,7 @@ const Countries = () => {
     console.log(data.supported_codes[0]);
 
             }catch(err){
-                // setLoading(true);
+                
                 console.log(err);
             }
             setLoading(false)
@@ -30,17 +30,24 @@ const Countries = () => {
   return (
     <div className='countries'>
         <div className='countries_info'>
-            <p>supported currencies</p>
-            <p>Countries</p>
+             <p>
+        currency codes
+
+        </p>
+         <p>
+        countries
+            
+        </p>
         </div>
-        {!loading ? countries.map((country)=>{return <>
+        {!loading ? countries.map((country,index)=>{return <>
             <Render
+            k={index}
              code={country[0]}
              country={country[1]}
              />
 
             
-            </>}):'loading...'}
+            </>}):<span className='loader'>..loading</span>}
     </div>
   )
 }

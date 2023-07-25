@@ -1,10 +1,11 @@
 import React from 'react'
 import './render.css'
 
-const Render = ({code,country}) => {
+const Render = ({k,code,country}) => {
   return (
+    
 
-    <div className='container'>
+    <div className='container' key={k}>
         <div className='countries_info'>
         <div className='symbol'>
         {code}
